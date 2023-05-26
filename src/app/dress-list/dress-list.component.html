@@ -1,0 +1,17 @@
+<table>
+    <thead>
+      <tr>
+        <th>Nom de la robe</th>
+        <th>Image</th>
+        <th>Détails</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dress of dresses">
+        <td>{{ dress.name }}</td>
+        <td><img [src]="dress.image" alt="Image de la robe"></td>
+        <td><a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a></td>
+      </tr>
+    </tbody>
+  </table>
+  

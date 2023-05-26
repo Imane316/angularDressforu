@@ -1,0 +1,10 @@
+<div *ngIf="dress">
+    <h2>Détails de la robe</h2>
+    <p>Nom: {{ dress.name }}</p>
+    <p>size: {{ dress.size }}</p>
+    <p>price: {{ dress.price }}</p>
+
+    <p>Image: <img [src]="dress.picture" alt="Image de la robe"></p>
+    <!-- Affichez d'autres propriétés de la robe selon vos besoins -->
+  </div>
+  

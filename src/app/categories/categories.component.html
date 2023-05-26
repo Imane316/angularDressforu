@@ -1,0 +1,14 @@
+<table>
+    <thead>
+      <tr>
+        <th>Nom de la catégorie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.name }}</td>
+        <td><a routerLink="/categorydetail/{{ category.idcategory }}">Voir les détails</a></td>
+
+      </tr>
+    </tbody>
+  </table>
