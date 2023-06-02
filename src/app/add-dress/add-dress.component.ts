@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
+import { NgForm } from '@angular/forms';
 import { DressService } from '../services/dress.service';
 
 @Component({
@@ -8,56 +11,33 @@ import { DressService } from '../services/dress.service';
   styleUrls: ['./add-dress.component.css']
 })
 export class AddDressComponent {
-  dressForm: FormGroup;
-  message: string = '';
-  imageUrl: string = '';
+  file!: File;
 
-  constructor(private formBuilder: FormBuilder, private dressService: DressService) {
-    this.dressForm = this.formBuilder.group({
-      name: '',
-      picture: '',
-      price: '',
-      material: '',
-      size: ''
-    });
+
+  message: string = '';
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dressService: DressService)
+  {
   }
 
   onFileSelected(event: any) {
-    const file = event.target.files[0];
-    this.dressForm.patchValue({ picture: file });
-    this.dressForm.get('picture')?.updateValueAndValidity();
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      this.imageUrl = reader.result as string;
-    };
-    reader.readAsDataURL(file);
+    this.file = event.target.files[0]; 
   }
 
-  sendForm() {
-    if (this.dressForm.invalid) {
-      return;
+
+  onSubmit(form:NgForm) {
+    if (form.valid){
+    console.log(form.value)
+
     }
-
-    const formData = new FormData();
-    formData.append('name', this.dressForm.get('name')?.value);
-    formData.append('picture', this.dressForm.get('picture')?.value);
-    formData.append('price', this.dressForm.get('price')?.value);
-    formData.append('material', this.dressForm.get('material')?.value);
-    formData.append('size', this.dressForm.get('size')?.value);
-
-    this.dressService.addDress(formData).subscribe(
-      (data: any) => {
-        console.log(data);
-        // Traitez la réponse de l'ajout de la robe si nécessaire
-        this.message = 'Dress created successfully!';
-      },
-      (error: any) => {
-        
-        console.error(error);
-        // Traitez l'erreur de l'ajout de la robe si nécessaire
-        this.message = 'Error creating dress';
-      }
-    );
+    var data:any = {};
+    Object.keys(form.value).forEach(key => {
+      data[key]= form.value[key];
+    });
+    data['picture']=this.file;
+    console.log(data['picture']);
+    this.dressService.addDress(data).subscribe((data: any) => {
+      console.log(data);
+      //this.router.navigate(['/other-page']);
+    });
   }
 }

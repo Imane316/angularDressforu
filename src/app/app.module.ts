@@ -11,6 +11,8 @@ import { DressdetailComponent } from './dressdetail/dressdetail.component';
 import { CategorydetailComponent} from './categorydetail/categorydetail.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AddDressComponent } from './add-dress/add-dress.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { DeletecategoryComponent } from './deletecategory/deletecategory.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AddDressComponent } from './add-dress/add-dress.component';
     DressdetailComponent,
     CategorydetailComponent,
     CategoriesComponent,
-    AddDressComponent
+    AddDressComponent,
+    AddCategoryComponent,
+    DeletecategoryComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,9 @@ export class DressService {
   }
 
   addDress(data: any): Observable<any> {
+    console.log(data);
     return this.http.post(`${this.apiUrl}/dress`, data);
+
   }
 
   updateDress(id: string, data: any): Observable<any> {

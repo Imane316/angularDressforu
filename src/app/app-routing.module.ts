@@ -5,12 +5,15 @@ import { DressdetailComponent } from './dressdetail/dressdetail.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategorydetailComponent } from './categorydetail/categorydetail.component';
 import { AddDressComponent } from './add-dress/add-dress.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 const routes: Routes = [
   {path : 'dresses', component: DressListComponent},
   {path : 'categories', component: CategoriesComponent},
   {path : 'dressdetail/:iddress', component: DressdetailComponent},
   {path : 'categorydetail/:idcategory', component: CategorydetailComponent},
-  { path: 'add-dress', component: AddDressComponent }
+  { path: 'adddress', component: AddDressComponent },
+  { path: 'addcategory', component: AddCategoryComponent }
+
   
 ];
 

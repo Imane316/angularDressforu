@@ -10,6 +10,7 @@ import { CategoryService } from '../services/category.service';
 export class CategoriesComponent {
   categories: any[] = [];
 
+
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
@@ -23,4 +24,12 @@ export class CategoriesComponent {
         this.categories = response;
       });
   }
+  deleteCategory(id: string): void {
+    this.categoryService.deleteCategory(id)
+      .subscribe(() => {
+        // Suppression réussie, mettez à jour la liste des catégories
+        this.getCategories();
+      });
+
+}
 }

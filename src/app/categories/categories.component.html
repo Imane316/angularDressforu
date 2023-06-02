@@ -8,6 +8,8 @@
       <tr *ngFor="let category of categories">
         <td>{{ category.name }}</td>
         <td><a routerLink="/categorydetail/{{ category.idcategory }}">Voir les détails</a></td>
+        <button (click)="deleteCategory(category.idcategory)">Supprimer</button>
+
 
       </tr>
     </tbody>

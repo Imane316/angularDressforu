@@ -22,5 +22,6 @@ export class DressListComponent implements OnInit {
         this.dresses = response;
       });
   }
+
 }
 
