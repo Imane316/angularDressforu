@@ -12,7 +12,8 @@ import { CategorydetailComponent} from './categorydetail/categorydetail.componen
 import { CategoriesComponent } from './categories/categories.component';
 import { AddDressComponent } from './add-dress/add-dress.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
-import { DeletecategoryComponent } from './deletecategory/deletecategory.component';
+import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DeletecategoryComponent } from './deletecategory/deletecategory.compone
     CategoriesComponent,
     AddDressComponent,
     AddCategoryComponent,
-    DeletecategoryComponent
+    ContactComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

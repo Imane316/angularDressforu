@@ -22,6 +22,12 @@ export class DressListComponent implements OnInit {
         this.dresses = response;
       });
   }
+  deleteDress(id: string): void {
+    this.dressService.deleteDress(id)
+      .subscribe(() => {
+        this.getDresses();
+      });
 
+}
 }
 

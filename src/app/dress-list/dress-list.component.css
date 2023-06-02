@@ -1,9 +1,45 @@
-/* dress-list.component.css */
-h2 {
-    color: blue;
-  }
-  
-  p {
-    font-size: 16px;
-  }
-  
+.logo {
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+  color:#9866C7;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: white;
+  font-weight: bold;
+}
+
+td img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+td a {
+  color: rgb(231, 142, 231);
+  text-decoration: underline;
+}
+
+button {
+  background-color: #9866C7;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+

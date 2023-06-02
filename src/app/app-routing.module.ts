@@ -6,13 +6,19 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategorydetailComponent } from './categorydetail/categorydetail.component';
 import { AddDressComponent } from './add-dress/add-dress.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
-  {path : 'dresses', component: DressListComponent},
-  {path : 'categories', component: CategoriesComponent},
-  {path : 'dressdetail/:iddress', component: DressdetailComponent},
-  {path : 'categorydetail/:idcategory', component: CategorydetailComponent},
+  { path : 'dresses', component: DressListComponent},
+  { path : 'categories', component: CategoriesComponent},
+  { path : 'dressdetail/:iddress', component: DressdetailComponent},
+  { path : 'categorydetail/:idcategory', component: CategorydetailComponent},
   { path: 'adddress', component: AddDressComponent },
-  { path: 'addcategory', component: AddCategoryComponent }
+  { path: 'addcategory', component: AddCategoryComponent },
+  { path:'contact', component: ContactComponent},
+  { path:'dressforu', component: NavbarComponent},
+  { path: '', redirectTo: 'dressforu', pathMatch: 'full' } // Redirection vers /dressforu
+
 
   
 ];
