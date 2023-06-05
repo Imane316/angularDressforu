@@ -1,0 +1,22 @@
+<div class="logo">
+    <h1>DressForU</h1>
+  </div>
+<div class="form-container">
+  <h2>Connexion</h2>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Pseudo:</label>
+    <input type="text" formControlName="pseudo" />
+  </div>
+  <div>
+    <label>Mot de passe:</label>
+    <input type="password" formControlName="password" />
+  </div>
+  <button type="submit">Se connecter</button>
+  <div *ngIf="message">{{ message }}</div>
+</form>
+<a routerLink="/register">Nouveau membre ? Enregistez-vous</a>
+
+</div>
+

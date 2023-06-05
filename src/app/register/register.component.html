@@ -1,0 +1,23 @@
+<div class="logo">
+    <h1>DressForU</h1>
+  </div>
+<div class="form-container">
+<h2>S'enregister</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Pseudo:</label>
+    <input type="text" formControlName="pseudo" />
+  </div>
+  <div>
+    <label>Mot de passe:</label>
+    <input type="password" formControlName="password" />
+  </div>
+  <div>
+    <label>Rôle:    </label>
+    <label><i>[Admin ou client]</i></label>
+    <input type="text" formControlName="role" />
+  </div>
+  <button type="submit">Valider</button>
+  <div *ngIf="message">{{ message }}</div>
+</form>
+</div>

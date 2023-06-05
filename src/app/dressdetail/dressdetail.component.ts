@@ -20,6 +20,7 @@ export class DressdetailComponent implements OnInit {
     if (id) {
       this.getDressById(id);
     }
+    
   }
 
   getDressById(id: string): void {

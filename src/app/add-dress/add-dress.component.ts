@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; 
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { DressService } from '../services/dress.service';
 
 @Component({
@@ -11,33 +11,37 @@ import { DressService } from '../services/dress.service';
   styleUrls: ['./add-dress.component.css']
 })
 export class AddDressComponent {
-  file!: File;
-
-
+  dressForm: FormGroup;
   message: string = '';
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dressService: DressService)
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dressService: DressService,private router: Router)
   {
-  }
-
-  onFileSelected(event: any) {
-    this.file = event.target.files[0]; 
-  }
-
-
-  onSubmit(form:NgForm) {
-    if (form.valid){
-    console.log(form.value)
-
-    }
-    var data:any = {};
-    Object.keys(form.value).forEach(key => {
-      data[key]= form.value[key];
+    this.dressForm = this.formBuilder.group({
+      // Définis ici les champs du formulaire pour la robe
+      name: '',
+      picture:'',
+      price: '',
+      material: '',
+      size: ''
     });
-    data['picture']=this.file;
-    console.log(data['picture']);
-    this.dressService.addDress(data).subscribe((data: any) => {
+  }
+
+  sendForm() {
+    const name = this.dressForm.get('name')?.value;
+    const picture = this.dressForm.get('picture')?.value;
+    const price = this.dressForm.get('price')?.value;
+    const material = this.dressForm.get('material')?.value;
+    const size= this.dressForm.get('size')?.value;
+    const requestBody = {
+      name,
+      picture,
+      price,
+      material,
+      size
+      
+    };
+    this.dressService.addDress(requestBody).subscribe((data: any) => {
       console.log(data);
-      //this.router.navigate(['/other-page']);
+      this.router.navigate(['/dresses']);
     });
   }
 }

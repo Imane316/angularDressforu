@@ -14,6 +14,8 @@ import { AddDressComponent } from './add-dress/add-dress.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddCategoryComponent,
     ContactComponent,
     NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
