@@ -8,38 +8,73 @@ h1 {
   margin: 0;
   color:#9866C7;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
+
+
 
 th, td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
-
-th {
-  background-color: white;
-  font-weight: bold;
-}
-
-td img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
-td a {
-  color: rgb(231, 142, 231);
-  text-decoration: underline;
-}
-
 button {
-  background-color: #9866C7;
-  color: #fff;
+  background-color: #9866C7; 
+  color: #ffffff; 
+  padding: 10px 20px;
   border: none;
-  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
+button:hover {
+  background-color:#9866C7; 
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.add-button {
+  padding: 10px 20px;
+  background-color: #9866C7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background-color: #9866C7;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
