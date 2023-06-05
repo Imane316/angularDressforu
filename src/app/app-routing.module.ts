@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdatedressComponent } from './updatedress/updatedress.component';
 const routes: Routes = [
   { path : 'dresses', component: DressListComponent},
   { path : 'categories', component: CategoriesComponent},
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path:'dressforu', component: NavbarComponent},
   { path:'login', component: LoginComponent},
   { path:'register', component: RegisterComponent},
+  { path: 'updatedress/:iddress', component: UpdatedressComponent },
+
 
   { path: '', redirectTo: 'dressforu', pathMatch: 'full' } // Redirection vers /dressforu
 

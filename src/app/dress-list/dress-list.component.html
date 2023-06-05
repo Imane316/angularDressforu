@@ -3,32 +3,23 @@
 </div>
 <nav>
   <ul>
-    <li><a routerLink="">Acceuil</a></li>
+    <li><a routerLink="">Accueil</a></li>
     <li><a routerLink="/dresses">Robes</a></li>
     <li><a routerLink="/categories">Catégories</a></li>
     <li><a routerLink="/contact">Contact</a></li>
-    <li><a routerLink="/register">S'enregister</a></li>
+    <li><a routerLink="/login">Se connecter</a></li>
   </ul>
 </nav>
-<table>
-  
-    <thead>
-      <tr>
-        <th>Nom de la robe</th>
-        <!--<th>Image</th>-->
-        <th>Détails</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let dress of dresses">
-        <td>{{ dress.name }}</td>
-        <!--<td><img [src]="dress.image" alt="Image de la robe"></td>-->
-        <td><a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a></td>
-        <button class="add-button" (click)="deleteDress(dress.iddress)">Supprimer</button>
 
-      </tr>
-    </tbody>
-  </table>
-  <div class="add-button-container">
-    <button class="add-button" routerLink="/adddress">Ajouter une nouvelle</button>
+<div class="dress-list">
+  <div *ngFor="let dress of dresses" class="dress-item">
+    <h2>{{ dress.name }}</h2>
+    <img [src]="dress.picture" alt="Image de la robe" class="dress-image">
+    <p><a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a></p>
+    <button class="delete-button" (click)="deleteDress(dress.iddress)">Supprimer</button>
   </div>
+</div>
+
+<div class="add-button-container">
+  <button class="add-button" routerLink="/adddress">Ajouter une nouvelle robe</button>
+</div>

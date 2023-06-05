@@ -1,0 +1,33 @@
+<div class="logo">
+    <h1>DressForU</h1>
+  </div>
+  <div class="form-container">
+      <h2>Modification de la robe</h2>
+      <form [formGroup]="dressForm" (ngSubmit)="sendForm()">
+        <div>
+          <label>Nom     :</label>
+          <input type="text" formControlName="name" />
+        </div>
+        <div>
+          <label>Photo   :</label>
+          <input type="text" formControlName="picture" />
+     
+        </div>
+        <div>
+          <label>Prix    :</label>
+          <input type="number" formControlName="price" />
+        </div>
+        <div>
+          <label>Matière :</label>
+          <input type="text" formControlName="material" />
+        </div>
+        <div>
+          <label>Taille  :</label>
+          <input type="text" formControlName="size" />
+        </div>
+    
+        <button type="submit">Mettre à jour</button>
+  
+      </form>
+    </div>
+    

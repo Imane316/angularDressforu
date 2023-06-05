@@ -78,3 +78,25 @@ a {
   text-decoration: none;
   color: #333;
 }
+.dress-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dress-item {
+  width: calc(50% - 10px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dress-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+.delete-button {
+  margin-top: 10px;
+}

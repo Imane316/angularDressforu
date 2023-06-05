@@ -38,10 +38,10 @@
     flex-direction: column;
     justify-content: center;
   }
-  .previous-button{
+  .button{
     background-color:#9866C7;
   }
-  .previous-button{
+  .button{
     padding: 10px 20px;
     background-color: #9866C7;
     color: white;
@@ -51,7 +51,7 @@
     font-size: 16px;
   }
   
-  .previous-button:hover {
+  .button:hover {
     background-color: #9866C7;
   }
   

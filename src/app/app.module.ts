@@ -16,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdatedressComponent } from './updatedress/updatedress.component';
+import { SearchDressComponent } from './search-dress/search-dress.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { RegisterComponent } from './register/register.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
+    UpdatedressComponent,
+    SearchDressComponent,
   ],
   imports: [
     BrowserModule,

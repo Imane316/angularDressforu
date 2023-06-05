@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CategoryService } from '../services/category.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -10,7 +11,7 @@ import { CategoryService } from '../services/category.service';
 export class AddCategoryComponent {
   catForm: FormGroup;
   message: string = '';
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private categoryService: CategoryService)
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private categoryService: CategoryService, private router :Router)
   {
     this.catForm = this.formBuilder.group({
       name: ''
@@ -26,6 +27,8 @@ export class AddCategoryComponent {
     };
     this.categoryService.addCategory(requestBody).subscribe((data: any) => {
       console.log(data);
+      this.router.navigate(['/categories']);
+
     });
   }
 }

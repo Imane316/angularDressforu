@@ -33,6 +33,42 @@
     text-decoration: none;
     color: #333;
   }
-  
 
+
+  .ribbon-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; 
+    overflow: hidden;
+  }
   
+  .image-container {
+    display: flex;
+    animation: slide-images 30s infinite;
+  }
+  
+  @keyframes slide-images {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin-right: 20px; 
+  }
+  .image-container img:last-child {
+    margin-right: 0; /* Supprime l'espacement de la dernière image */
+  }
