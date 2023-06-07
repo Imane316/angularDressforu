@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,7 +13,7 @@ export class RegisterComponent {
   message: string = '';
 
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private userService: UserService, private router:Router) {
     this.registerForm = this.formBuilder.group({
       pseudo: '',
       password: '',
@@ -27,6 +28,7 @@ export class RegisterComponent {
     this.userService.userNew(pseudo, password, role).subscribe();
     console.log("ok");
     this.registerForm.reset();
+    this.router.navigate(['/login']);
 
 
 

@@ -71,4 +71,19 @@
     ul.dress-list li a:hover {
       background-color: #d77171;
     }
+    .button{
+      background-color:#9866C7;
+    }
+    .button{
+      padding: 10px 20px;
+      background-color: #9866C7;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 16px;
+    }
     
+    .button:hover {
+      background-color: #9866C7;
+    }

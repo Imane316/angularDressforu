@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdatedressComponent } from './updatedress/updatedress.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { UpdatecategoryComponent } from './updatecategory/updatecategory.component';
 
 const routes: Routes = [
   { path : 'dresses', component: DressListComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent},
   { path:'register', component: RegisterComponent},
   { path: 'updatedress/:iddress', component: UpdatedressComponent },
+  { path: 'updatecategory/:idcategory', component: UpdatecategoryComponent },
   { path: 'search', component:SearchbarComponent},
 
 

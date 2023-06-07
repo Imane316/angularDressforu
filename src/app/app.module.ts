@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdatedressComponent } from './updatedress/updatedress.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { UpdatecategoryComponent } from './updatecategory/updatecategory.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     RegisterComponent,
     UpdatedressComponent,
     SearchbarComponent,
+    UpdatecategoryComponent,
   ],
   imports: [
     BrowserModule,
