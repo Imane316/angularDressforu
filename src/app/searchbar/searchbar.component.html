@@ -22,7 +22,7 @@
         <p>Material: {{ dress.material }}</p>
         <p>Size: {{ dress.size }}</p>
       </div>
-      <div *ngIf="!dress && searchTerm.length > 0">
+      <div *ngIf="searchTerm.length > 0 && !dress&& searchClicked">
         Essayez un autre nom.
       </div>
     </div>

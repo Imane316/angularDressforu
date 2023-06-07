@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchbarComponent implements OnInit{
   searchTerm: string = '';
   dress: any;
+  searchClicked: boolean = false;
 
   constructor(   private dressService: DressService) { }
 
@@ -23,9 +24,12 @@ export class SearchbarComponent implements OnInit{
 
         this.dress = response;
         console.log(this.dress);
+        this.searchClicked = true;
       });
   }
+ 
 
+  
 }
 
 
