@@ -1,0 +1,28 @@
+<div class="logo">
+    <h1>DressForU</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/dresses">Robes</a></li>
+      <li><a routerLink="/categories">Catégories</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/login">Se connecter</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+  <h1>Recherche d'une robe</h1><div>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher une robe...">
+    <button (click)="search()">Rechercher</button>
+  </div>
+
+    <div *ngIf="dress">
+        <h3>{{ dress.name }}</h3>
+        <img [src]="dress.picture" alt="Dress Image">
+        <p>Price: {{ dress.price }}</p>
+        <p>Material: {{ dress.material }}</p>
+        <p>Size: {{ dress.size }}</p>
+      </div>
+      <div *ngIf="!dress && searchTerm.length > 0">
+        Essayez un autre nom.
+      </div>
+    </div>

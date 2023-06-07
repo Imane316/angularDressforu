@@ -33,7 +33,6 @@
     text-decoration: none;
     color: #333;
   }
-  
   .container {
     display: flex;
     flex-direction: column;
@@ -48,27 +47,3 @@
     width: 120px;
     text-align: right;
     margin-right: 10px;  }
-    ul.dress-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    ul.dress-list li {
-      margin-bottom: 10px;
-      display: block; 
-    }
-    
-    ul.dress-list li a {
-      display: inline-block;
-      padding: 5px 10px;
-      background-color: #f58c8c;
-      color: #333;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    
-    ul.dress-list li a:hover {
-      background-color: #d77171;
-    }
-    

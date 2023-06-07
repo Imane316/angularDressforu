@@ -29,7 +29,11 @@ export class CategoryService {
     return this.http.delete(`${this.apiUrl}/category/${id}`);
   }
 
-  addDressToCategory(categoryId: string, dressId: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/categories/${categoryId}/dresses/${dressId}`, {});
+  addDressToCategory(id: string, dressId: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/categories/${id}/dresses/${dressId}`, {});
+  }
+
+  getDressIdsByCategoryId(id: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/category/${id}/dresses`);
   }
 }

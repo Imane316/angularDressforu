@@ -1,10 +1,22 @@
 <div class="logo">
   <h1>DressForU</h1>
-</div><div *ngIf="category">
-    <h2>Détails de la catégorie</h2>
-    <p>Nom: {{ category.name }}</p>
-    <!--<p>Robes: {{ category.iddress }}</p>
-
-     Affichez d'autres propriétés de la robe selon vos besoins -->
-  </div>
-  
+</div>
+<nav>
+  <ul>
+    <li><a routerLink="">Accueil</a></li>
+    <li><a routerLink="/dresses">Robes</a></li>
+    <li><a routerLink="/categories">Catégories</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/login">Se connecter</a></li>
+  </ul>
+</nav>
+<div *ngIf="category" class="container">
+  <div>Détails de la catégorie : </div>
+  <h2>{{ category.name }}</h2>
+  <p>Robes appartenant à cette catégorie</p>
+  <ul class="dress-list">
+    <li *ngFor="let dressId of dressIds">
+      <a [routerLink]="['/dressdetail/', dressId]">{{ dressNames[dressId] }}</a>
+    </li>
+  </ul>
+</div>
