@@ -13,6 +13,7 @@ export class LoginComponent {
   loginForm: FormGroup;
   message: string = '';
   data : any;
+
   constructor(private formBuilder: FormBuilder, private http: HttpClient,private userService: UserService,   private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
@@ -27,9 +28,18 @@ export class LoginComponent {
     const password = (<string>this.loginForm.get('password')?.value) || '';
     this.userService.login(pseudo, password).subscribe(
       data => {
+        
         localStorage.setItem('token', data.token);
         console.log("ok");
         this.loginForm.reset();
+        this.message = "Vous êtes connecté";
+      },
+      error => {
+        this.message = error.error.message; // Mettre à jour la propriété message avec le message d'erreur renvoyé par le backend
+      
+        this.loginForm.reset();
+        
+
 
         
       },
