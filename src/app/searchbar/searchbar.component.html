@@ -13,6 +13,7 @@
   <h1>Recherche d'une robe</h1><div>
     <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher une robe...">
     <button (click)="search()">Rechercher</button>
+    <div *ngIf="message"> {{ message }}</div>
   </div>
 
     <div *ngIf="dress">
@@ -22,7 +23,5 @@
         <p>Material: {{ dress.material }}</p>
         <p>Size: {{ dress.size }}</p>
       </div>
-      <div *ngIf="searchTerm.length > 0 && !dress&& searchClicked">
-        Essayez un autre nom.
-      </div>
+      
     </div>
