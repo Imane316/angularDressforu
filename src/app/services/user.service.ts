@@ -40,24 +40,8 @@ export class UserService {
 
   }
 
-  isLoggedIn() {
-    return localStorage.getItem('token') !== null;
-    console.log("ok");
-  }
+  
 
-  getAuthToken() {
-    return localStorage.getItem('token');
-  }
-
-
-  isAdmin(): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.getAuthToken()}`
-    });
-    return this.http.get<any>(this.apiUrl + '/checkadmin', { headers });
-    console.log("ok");
-
-  }
   
 
 }

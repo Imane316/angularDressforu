@@ -70,5 +70,5 @@
     margin-right: 20px; 
   }
   .image-container img:last-child {
-    margin-right: 0; /* Supprime l'espacement de la dernière image */
+    margin-right: 0; 
   }
